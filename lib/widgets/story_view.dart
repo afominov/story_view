@@ -612,7 +612,7 @@ class StoryViewState extends State<StoryView> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      // color: Colors.transparent,
       child: Stack(
         children: <Widget>[
           _currentView,
@@ -621,11 +621,10 @@ class StoryViewState extends State<StoryView> with TickerProviderStateMixin {
                 ? Alignment.topCenter
                 : Alignment.bottomCenter,
             child: SafeArea(
-              bottom: widget.inline ? false : true,
-              // we use SafeArea here for notched and bezeles phones
+              top: false,
               child: Container(
                 padding: EdgeInsets.symmetric(
-                  horizontal: 16,
+                  horizontal: 0,
                   vertical: 8,
                 ),
                 child: PageBar(
