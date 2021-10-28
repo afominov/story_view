@@ -777,15 +777,14 @@ class PageBarState extends State<PageBar> {
   Widget build(BuildContext context) {
     return Row(
       children: widget.pages.map((it) {
-        return Expanded(
-          child: Container(
-            padding: EdgeInsets.only(
-                right: widget.pages.last == it ? 0 : this.spacing),
-            child: StoryProgressIndicator(
-              isPlaying(it) ? widget.animation!.value : (it.shown ? 1 : 0),
-              indicatorHeight:
-                  widget.indicatorHeight == IndicatorHeight.large ? 5 : 3,
-            ),
+        return Container(
+          width: 34.0,
+          padding: EdgeInsets.only(
+              right: widget.pages.last == it ? 0 : this.spacing),
+          child: StoryProgressIndicator(
+            isPlaying(it) ? widget.animation!.value : (it.shown ? 1 : 0),
+            indicatorHeight:
+                widget.indicatorHeight == IndicatorHeight.large ? 5 : 3,
           ),
         );
       }).toList(),
